@@ -8,7 +8,7 @@ For example, today I gave each of my pets a dose of Frontline for flea preventio
 
 - [ ] Table of owners (users). (id & name, email)
 - [ ]  Table of pets. (id, name, owner_id(foreign key))
-- [ ] Table of events. (id, name, date, category_id(foreign key), reminder_time(increment chosen by user for        reoccurence))
+- [ ] Table of events. (id, name, date, category_id(foreign key), reminder_time(increment chosen by user for        reoccurence), comment)
 - [ ] Table of event categories (id, name). Categories would include: Medicine, Grooming Visit, and Vet Visit.
 - [ ] Bridge table for pets and events. (primary key, pet_id(foreign key), event_id(foreign key))
 
