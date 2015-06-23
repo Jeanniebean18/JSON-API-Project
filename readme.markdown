@@ -12,6 +12,8 @@ For example, today I gave each of my pets a dose of Frontline for flea preventio
 - [ ] Table of event categories (id, name). Categories would include: Medicine, Grooming Visit, and Vet Visit.
 - [ ] Bridge table for pets and events. (primary key, pet_id(foreign key), event_id(foreign key))
 
+Each owner has one or many pets. Each pet has one or many events. Each event has many or one pet associated with ti. Each event has one category. Each category has many events. 
+
 ##Requirements
 
 - [ ] At least three models (Owner, Pet, Event, Category)
