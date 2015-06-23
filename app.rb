@@ -1,7 +1,15 @@
 # Empower my program with SQLite.
 require "sqlite3"
+require "pry"
+require "sinatra"
+require "sinatra/reloader"
+# Inventory tracking system for Fibers Home Store. 
+# Empower my program with SQLite.
+require "sqlite3"
+require "active_support/inflector"
 
-require_relative "owner.rb"
+require_relative "models/owner.rb"
+
 
 # Load/create our database for this program in SQlite.
 CONNECTION = SQLite3::Database.new("pet_tracker.db")
@@ -23,3 +31,22 @@ CONNECTION.results_as_hash = true
 
 
 #___________________________________________________________________________________________________________
+
+get "/home" do
+  erb :user_menu
+end
+
+get "/add_owner" do
+  erb :add_owner
+end
+
+get "/existing_owner" do
+  erb :existing_owner
+end
+
+
+
+     
+
+
+

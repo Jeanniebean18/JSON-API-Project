@@ -8,7 +8,7 @@ require_relative "database_instance_methods.rb"
 # Should edit owner email.
 # Should Delete an owner.
 # Should Edit owner name.
-# ALl of these methods are defined in database class and instance methods. 
+# ALl of these methods are defined in database class and instance methods.
 
 class Owner
   extend DatabaseClassMethods
