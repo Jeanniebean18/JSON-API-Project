@@ -6,7 +6,7 @@ For example, today I gave each of my pets a dose of Frontline for flea preventio
 
 ##Description
 
-- [ ] Table of owners (users). (id & name)
+- [ ] Table of owners (users). (id & name, email)
 - [ ]  Table of pets. (id, name, owner_id(foreign key))
 - [ ] Table of events. (id, name, date, category_id(foreign key), reminder_time(increment chosen by user for        reoccurence))
 - [ ] Table of event categories (id, name). Categories would include: Medicine, Grooming Visit, and Vet Visit.
@@ -41,16 +41,18 @@ Each owner has one or many pets. Each pet has one or many events. Each event has
 - [ ] Fetch all events for a given pet.
 - [ ] Fetch all pets for a given event.
 - [ ] If event deleted, it should delete row from both event table and bridge table.
+- [ ] When event approaching, event should send an email to user telling them of event details. (or push notification)
+- [ ] Show all categories.
 
 
 ##"Should Not" Cases
 
-- [ ] Create a category ( I want to keep this really simple, if I find feedback warrants more than these categories,
-- [ ] I'll considering adding them. But not user added.)
+- [ ] Create a category ( I want to keep this really simple, if I find feedback warrants more than these categories, I'll considering adding them. But not user added.)
 - [ ] Delete a category.
 - [ ] Create an event without category, name, pet(s) involved, date or increment reminder.
 - [ ] Change a category of an event. They begin an event by choosing the category first, so they should have no reason to change the category.
 - [ ] Should not limit user on amount of pets to add. 
+- [ ] Change pet owner_id.
 
 ####Should not and should case? 
 
