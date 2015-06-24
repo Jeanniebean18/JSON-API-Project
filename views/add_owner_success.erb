@@ -1,0 +1,5 @@
+Saved! Thanks <%= params["name"]%>
+<% Owner.all.each do |owner| %>
+<p> <%= owner.id %><br> <%= owner.name %><br> <%= owner.email %></p>
+<% end %>
+<a href="/home">Return to main menu?</a>

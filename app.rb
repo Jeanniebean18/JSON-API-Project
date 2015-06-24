@@ -36,13 +36,7 @@ get "/home" do
   erb :user_menu
 end
 
-get "/add_owner" do
-  erb :add_owner
-end
-
-get "/existing_owner" do
-  erb :existing_owner
-end
+require_relative "controllers/owners.rb"
 
 
 

@@ -1,0 +1,8 @@
+<h1>Choose an Owner:</h1>
+     
+Select an Owner: 
+  <ul>  
+    <% Owner.all.each do |owner| %>
+    <li><a href="/see_profile/<%= owner.id %>"><%= owner.id %>. <%= owner.name %></a></li>
+    <% end %>
+  </ul>
