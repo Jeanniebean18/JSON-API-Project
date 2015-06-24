@@ -59,8 +59,6 @@ get "/save_profile" do
   @owner = Owner.find(params["id"])
   # both name_valid and email_valid must return true before saving to object and database.
   if @owner.name_valid(params["name"]) && @owner.email_valid(params["email"])
-    @owner.name = params["name"]
-    @owner.email = params["email"]
     @owner.save
     erb :"edit_profile_success"
   else
