@@ -32,9 +32,12 @@ class Owner
   end
   # save row to database. 
   def save
-    CONNECTION.execute("UPDATE owners SET name = '#{@name}', email = '#{@email}' WHERE id = #{self.id};")
+    CONNECTION.execute("UPDATE owners SET name = '#{self.name}', email = '#{self.email}' WHERE id = #{self.id};")
   end
-  
+  # instance method adds object attributes to database as a row.
+  def add_to_database
+    Owner.add({"name" => "#{self.name}", "email" => "#{self.email}")
+  end
   # email_valid - if email isn't empty, return true.
   def email_valid(email)
     if !email.empty?
