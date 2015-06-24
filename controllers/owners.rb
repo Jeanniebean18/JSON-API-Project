@@ -7,19 +7,14 @@ get "/add_owner" do
   erb :add_owner
 end
 get "/save_owner" do
-  if params["name"].empty? 
-    # Unsuccessful edit page.
-    @error = true
-    erb :"add_owner"
-  elsif params["email"].empty? 
-    # Unsuccessful edit page.
-    @error = true
-    erb :"add_owner"
-  else 
+  if @owner.name_valid(params["name"]) && @owner.email_valid(params["email"]) 
     Owner.add({"name" => params["name"], "email" => params["email"]})
     # Successful edit page.
     erb :"add_owner_success"
-    # take them to menu to see their pets, if they don't have any pets. ask them to add some. 
+    
+  else
+    @error = true
+    erb :add_owner
   end
 end
 # delete owner -------------------------------------------------
