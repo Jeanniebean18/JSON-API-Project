@@ -33,6 +33,7 @@ CONNECTION.results_as_hash = true
 #___________________________________________________________________________________________________________
 
 require_relative "controllers/owners.rb"
+require_relative "controllers/pets.rb"
 
 
 
