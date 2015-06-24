@@ -30,5 +30,7 @@ class Owner
     @email = owner_options["email"]
     
   end
- 
+  def save
+    CONNECTION.execute("UPDATE owners SET name = '#{@name}', email = '#{@email}' WHERE id = #{@id};")
+  end
 end
