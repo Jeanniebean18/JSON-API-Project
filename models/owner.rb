@@ -36,7 +36,7 @@ class Owner
   end
   # instance method adds object attributes to database as a row.
   def add_to_database
-    Owner.add({"name" => "#{self.name}", "email" => "#{self.email}")
+    Owner.add({"name" => "#{self.name}", "email" => "#{self.email}"})
   end
   # email_valid - if email isn't empty, return true.
   def email_valid(email)
