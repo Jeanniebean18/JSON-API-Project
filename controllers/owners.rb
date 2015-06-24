@@ -7,11 +7,10 @@ get "/add_owner" do
   erb :add_owner
 end
 get "/save_owner" do
+  @owner = Owner.new({"name" => params["name"], "email" => params["email"]})
   if @owner.name_valid(params["name"]) && @owner.email_valid(params["email"]) 
     Owner.add({"name" => params["name"], "email" => params["email"]})
-    # Successful edit page.
     erb :"add_owner_success"
-    
   else
     @error = true
     erb :add_owner
