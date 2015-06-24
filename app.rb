@@ -32,10 +32,6 @@ CONNECTION.results_as_hash = true
 
 #___________________________________________________________________________________________________________
 
-get "/home" do
-  erb :user_menu
-end
-
 require_relative "controllers/owners.rb"
 
 

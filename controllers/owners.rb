@@ -1,3 +1,7 @@
+get "/home" do
+  erb :user_menu
+end
+
 # add owner------------------------------------------------------
 get "/add_owner" do
   erb :add_owner
@@ -53,20 +57,18 @@ end
   
 get "/save_profile" do
   @owner = Owner.find(params["id"])
-  if params["name"].empty?
-    @error = true
-    erb :"edit_profile"
-
-  elsif params["email"].empty?
-    @error = true
-    erb :"edit_profile"
-  else
+  # both name_valid and email_valid must return true before saving to object and database.
+  if @owner.name_valid(params["name"]) && @owner.email_valid(params["email"])
     @owner.name = params["name"]
     @owner.email = params["email"]
     @owner.save
     erb :"edit_profile_success"
+  else
+    @error = true
+    erb :"edit_profile"
   end
 end
+
  
 
   

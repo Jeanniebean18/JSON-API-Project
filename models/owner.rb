@@ -30,7 +30,21 @@ class Owner
     @email = owner_options["email"]
     
   end
+  # save row to database. 
   def save
-    CONNECTION.execute("UPDATE owners SET name = '#{@name}', email = '#{@email}' WHERE id = #{@id};")
+    CONNECTION.execute("UPDATE owners SET name = '#{@name}', email = '#{@email}' WHERE id = #{self.id};")
+  end
+  
+  # email_valid - if email isn't empty, return true.
+  def email_valid(email)
+    if !email.empty?
+      return true
+    end
+  end
+  # name_valid - if name isn't empty, return true.
+  def name_valid(name)
+    if !name.empty?
+      return true
+    end
   end
 end
