@@ -10,6 +10,7 @@ require "active_support/inflector"
 
 require_relative "models/owner.rb"
 require_relative "models/pet.rb"
+require_relative "models/category.rb"
 
 
 # Load/create our database for this program in SQlite.
@@ -35,6 +36,7 @@ CONNECTION.results_as_hash = true
 
 require_relative "controllers/owners.rb"
 require_relative "controllers/pets.rb"
+require_relative "controllers/categories.rb"
 
 
 

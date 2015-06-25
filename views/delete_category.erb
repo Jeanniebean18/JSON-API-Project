@@ -1,0 +1,12 @@
+   
+     
+<form action="/category_deleted">
+  
+  <p> Are you sure you want to delete  <%=@category.name%>? :  
+    <input type="radio"  name="decision" value="yes" > Yes
+    <input type="radio"  name="decision" value="no" checked> No
+    <input type="hidden" name= "id" value="<%=@category.id%>">
+  <p> <input type="submit" value="delete category"></p>
+
+</form>
+    

@@ -1,7 +1,6 @@
 # pets controller
 
 # add pet------------------------------------------------------
-#TODO Bug right here, not sending to error. Something about
 get "/add_pet/:x" do
   @owner = Owner.find(params["x"])
   erb :"add_pet"

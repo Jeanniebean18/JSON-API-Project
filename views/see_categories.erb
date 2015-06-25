@@ -1,0 +1,6 @@
+Click on a Category to Edit: 
+
+<% Category.all.each do |category| %>
+<p><%= category.name %> <a href = "/edit_categories/<%= category.id %>"> edit category</a> 
+<a href = "/delete_category/<%= category.id %>"> delete category</a></p>
+<% end %>

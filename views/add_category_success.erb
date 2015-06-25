@@ -1,0 +1,6 @@
+Saved!  <%= params["name"]%>
+<% Category.all.each do |category| %>
+<p><%= category.id %>"> <%= category.name %></p>
+<% end %>
+
+<a href="/home">Return to main menu?</a>
