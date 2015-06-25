@@ -2,7 +2,7 @@
 
 <form action="/save_event">
   <p> Name (required): <input type="text" placeholder="name" name="name" value="<%= params["name"]%>" required></p>
-  
+  <!-- what to do with pet information.  -->
   <p> For pets:
     <%pets = Pet.where("owner_id", @owner.id)%>
     <% pets.each do |pet| %>

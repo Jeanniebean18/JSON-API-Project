@@ -46,7 +46,8 @@ class Event
   end
   # 
   # TODO write a method that adds the incremented time to the date.
-  
+  # need to add pets to pets_events table. 
+ 
   # select from pets where owner_id = owner.id
   # email_valid - if email isn't empty, return true.
   # owner id should be passed as hidden field. 
@@ -59,13 +60,13 @@ class Event
   #      return false
   #    end
   #  end
-  # name_valid - if name isn't empty, return true.
-  def name_valid(name)
-    if !name.empty?
-      self.name = name
-      return true
-    else 
-      return false
-    end
-  end
+  # # name_valid - if name isn't empty, return true.
+ #  def name_valid(name)
+ #    if !name.empty?
+ #      self.name = name
+ #      return true
+ #    else
+ #      return false
+ #    end
+ #  end
 end

@@ -12,6 +12,7 @@ require_relative "models/owner.rb"
 require_relative "models/pet.rb"
 require_relative "models/category.rb"
 require_relative "models/event.rb"
+require_relative "models/petevent.rb"
 
 
 # Load/create our database for this program in SQlite.
