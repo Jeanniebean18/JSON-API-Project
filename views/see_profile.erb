@@ -1,10 +1,22 @@
 <h1> Hi <%= @owner.name %> </h1>
-<h2>Here are your pets:</h2>
- <%pets = Pet.where("owner_id", @owner.id)%>
-   <% pets.each do |pet| %>
- <b><p> <%=pet.name%></b> <a href="/edit_pet/<%=pet.id%>">edit name</a> <a href="/delete_pet/<%=pet.id%>">delete pet</a></p>
-   <% end %>
-<h2><a href="/add_pet/<%=@owner.id %>">Add a Pet</a></h2>
-<p>Or, <a href="/edit_profile/<%= @owner.id %>">Edit your Profile</a> <a href="/home">Return to main menu?</a>
+
+<!-- add new event by category -->
+
+<h2>Add a new pet event:</h2>
+
+<% Category.all.each do |category| %>
+<p><a href = "/create_event/<%= category.id %>"><%= category.name %> </a> 
+  <% end %>
+
+  <!-- listing pets to edit or delete -->
+  <h2>Here are your pets:</h2>
+  <%pets = Pet.where("owner_id", @owner.id)%>
+  <% pets.each do |pet| %>
+  <b><p> <%=pet.name%></b> <a href="/edit_pet/<%=pet.id%>">edit name</a> <a href="/delete_pet/<%=pet.id%>">delete pet</a></p>
+  <% end %>
+  <!-- add pet -->
+  <h2><a href="/add_pet/<%=@owner.id %>">Add a Pet</a></h2>
+  <!-- edit user profile -->
+  <p>Or, <a href="/edit_profile/<%= @owner.id %>">Edit your Profile</a> <a href="/home">Return to main menu?</a>
      
     
