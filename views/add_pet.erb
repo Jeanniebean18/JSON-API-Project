@@ -1,11 +1,6 @@
-<% if @error %>
-<p> Your pet name wasn't saved, a name is required.</p>
-<%end%>
-<%= @owner.id %>
-
 <h1>Tell us about your pet! </h1> 
 <form action="/save_pet">
-    <p> Pet Name (required): <input type="text" placeholder="name" name="name" value="<%=params["name"]%>"></p>
-    <input type="hidden" name="owner_id" value="<%= @owner.id %>">
-    <p> <input type="submit" value="submit"></p>
-  </form>
+  <p> Pet Name (required): <input type="text" placeholder="name" name="name" value="<%=params["name"]%>" required></p>
+  <input type="hidden" name="owner_id" value="<%= @owner.id %>">
+  <p> <input type="submit" value="submit"></p>
+</form>

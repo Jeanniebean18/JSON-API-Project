@@ -27,13 +27,9 @@ end
 get "/save_pet_name" do
   @pet = Pet.find(params["id"])
   # both name_valid and email_valid must return true before saving to object and database.
-  if @pet.name_valid(params["name"])
-    @pet.save
-    erb :"edit_pet_success"
-  else
-    @error = true
-    erb :"edit_pet"
-  end
+  @pet.name = (params["name"])
+  @pet.save
+  erb :"edit_pet_success"
 end
 
 # delete pet -------------------------------------------------

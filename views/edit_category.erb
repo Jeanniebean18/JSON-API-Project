@@ -3,7 +3,7 @@
 <p>Enter any changes and click submit. </p>
    
 <form action="/save_category_edit">
-  <p> Name : <input type="text" placeholder="" name="name" value="<%=@category.name%>"></p>
+  <p> Name : <input type="text" placeholder="" name="name" value="<%=@category.name%>" required></p>
    <input type="hidden" name= "id" value="<%=@category.id%>">
   <p> <input type="submit" value="submit changes"></p>
 </form>

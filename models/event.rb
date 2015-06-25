@@ -6,11 +6,6 @@ require_relative "../database_class_methods.rb"
 require_relative "../database_instance_methods.rb"
 
 
-# name Text
-# date 
-# category_id foreign key
-# reminder date
-# comment
 
 class Event
   extend DatabaseClassMethods
