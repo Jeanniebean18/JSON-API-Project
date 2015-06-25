@@ -1,6 +1,7 @@
 # require_relative "locationclass.rb"
 require_relative "owner.rb"
 require_relative "category.rb"
+require_relative "event.rb"
 require_relative "../database_class_methods.rb"
 require_relative "../database_instance_methods.rb"
 

@@ -38,7 +38,7 @@ CONNECTION.results_as_hash = true
 require_relative "controllers/owners.rb"
 require_relative "controllers/pets.rb"
 require_relative "controllers/categories.rb"
-require_relative "controllers/event.rb"
+require_relative "controllers/events.rb"
 
 
 
