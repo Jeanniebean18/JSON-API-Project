@@ -16,6 +16,7 @@ get "/save_pet" do
     erb :"add_pet"
   end
 end
+#TODO Bug right here, not sending to error. Something about
 
 # edit pet -------------------------------------------------
 get "/edit_pet/:x" do
