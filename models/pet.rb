@@ -14,8 +14,8 @@ require_relative "../database_instance_methods.rb"
 class Pet
   extend DatabaseClassMethods
   include DatabaseInstanceMethods
-  attr_reader :id
-  attr_accessor :name, :owner_id
+  attr_reader :id, :owner_id
+  attr_accessor :name
  
   # Initializes a new Pet object.
   #
@@ -39,6 +39,8 @@ class Pet
   def add_to_database
     Pet.add({"name" => "#{self.name}", "owner_id" => "#{self.owner_id}"})
   end
+  
+  # select from pets where owner_id = owner.id
   # email_valid - if email isn't empty, return true.
   # owner id should be passed as hidden field. 
   

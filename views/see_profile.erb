@@ -1,8 +1,10 @@
 <h1> Hi <%= @owner.name %> </h1>
 <h2>Here are your pets:</h2>
-<h2>No pets? Add one.</h2>
-<p><a href="/add_pet/<%= @owner.id %>">Add a Pet</a></p>
-<p>  Or,  <a href="/edit_profile/<%= @owner.id %>">Edit your Profile</a></p>
-<p><a href="/home">Return to main menu?</a></p>
+ <%pets = Pet.where("owner_id", @owner.id)%>
+   <% pets.each do |pet| %>
+ <p> <%= pet.name %> </p>
+   <% end %>
+<h2><a href="/add_pet/<%= @owner.id %>">Add a Pet</a></h2>
+<p>  Or,  <a href="/edit_profile/<%= @owner.id %>">Edit your Profile</a> <a href="/home">Return to main menu?</a>
      
     
