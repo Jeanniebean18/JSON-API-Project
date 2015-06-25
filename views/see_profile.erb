@@ -2,7 +2,7 @@
 <h2>Here are your pets:</h2>
  <%pets = Pet.where("owner_id", @owner.id)%>
    <% pets.each do |pet| %>
- <p> <%= pet.name %> </p>
+ <b><p> <%=pet.name%></b> <a href="/edit_pet/<%=pet.id%>">edit name</a></p>
    <% end %>
 <h2><a href="/add_pet/<%= @owner.id %>">Add a Pet</a></h2>
 <p>  Or,  <a href="/edit_profile/<%= @owner.id %>">Edit your Profile</a> <a href="/home">Return to main menu?</a>
