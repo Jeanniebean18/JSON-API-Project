@@ -9,6 +9,7 @@ require "sqlite3"
 require "active_support/inflector"
 
 require_relative "models/owner.rb"
+require_relative "models/pet.rb"
 
 
 # Load/create our database for this program in SQlite.
