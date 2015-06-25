@@ -11,8 +11,8 @@ require_relative "category.rb"
 class PetEvent
   extend DatabaseClassMethods
   include DatabaseInstanceMethods
-  attr_reader :id
-  attr_accessor :name
+  
+  attr_accessor :pet_id, :owner_id
  
   # Initializes a new Category object.
   #
@@ -26,11 +26,11 @@ class PetEvent
   end
   # save row to database. 
   def save
-    CONNECTION.execute("UPDATE categories SET name = '#{self.name}' WHERE id = #{self.id};")
+    CONNECTION.execute("UPDATE petevents SET pet_id = '#{self.pet_id}', event_id = '#{self.event_id}', WHERE id = #{self.id};")
   end
   # instance method adds object attributes to database as a row.
   def add_to_database
-    Category.add({"name" => "#{self.name}"})
+    PetEvent.add({"name" => "#{self.pet_id}"} "name" => "#{self.event_id}"})
   end
  
 end
@@ -61,10 +61,6 @@ end
   
   
   
-  # params["pets"].each do |pet|
- #    @pet = Pet.find(pet)
- #    @pet_event = PetEvent.new(@pet.id, @event.id )
- #    @pet_event.add_to_database
- #  end
+  
   
 # with pet id, event_id

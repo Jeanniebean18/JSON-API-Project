@@ -27,7 +27,7 @@ category_id INTEGER, reminder_time TEXT, comment TEXT);")
 
 CONNECTION.execute("CREATE TABLE IF NOT EXISTS categories (id INTEGER PRIMARY KEY, name TEXT);")
 
-CONNECTION.execute("CREATE TABLE IF NOT EXISTS pets_and_events (pet_id INTEGER, event_id INTEGER);")
+CONNECTION.execute("CREATE TABLE IF NOT EXISTS petevents (pet_id INTEGER, event_id INTEGER);")
 
 # Get results as an Array of Hashes.
 CONNECTION.results_as_hash = true
