@@ -1,10 +1,10 @@
 get "/home" do
-  erb :user_menu
+  erb :"user_menu"
 end
 
 # add owner------------------------------------------------------
 get "/add_owner" do
-  erb :add_owner
+  erb :"add_owner"
 end
 get "/save_owner" do
   @owner = Owner.new({"name" => params["name"], "email" => params["email"]})
@@ -13,7 +13,7 @@ get "/save_owner" do
     erb :"add_owner_success"
   else
     @error = true
-    erb :add_owner
+    erb :"add_owner"
   end
 end
 # delete owner -------------------------------------------------
@@ -33,7 +33,7 @@ get "/delete_owner" do
 end
 # select existing owner------------------------------------------
 get "/existing_owner" do
-  erb :existing_owner
+  erb :"existing_owner"
 end
 
 get "/see_profile/:x" do

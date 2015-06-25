@@ -1,0 +1,12 @@
+   
+     
+<form action="/delete_pet_confirm">
+  
+  <p> Are you sure you want to delete  <%=@pet.name%>? :  
+    <input type="radio"  name="decision" value="yes" > Yes
+    <input type="radio"  name="decision" value="no" checked> No
+    <input type="hidden" name= "id" value="<%=@pet.id%>">
+  <p> <input type="submit" value="delete pet"></p>
+
+</form>
+    

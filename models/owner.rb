@@ -2,7 +2,7 @@
 # require_relative "categoryclass.rb"
 require_relative "../database_class_methods.rb"
 require_relative "../database_instance_methods.rb"
-# require_relative "models/pet.rb"
+require_relative "pet.rb"
 
 
 # Should Create a new owner.

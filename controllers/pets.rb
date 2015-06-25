@@ -1,10 +1,8 @@
+# pets controller
+
 # add pet------------------------------------------------------
-
-
 get "/add_pet/:x" do
   @owner = Owner.find(params["x"])
-  # @owner = Owner.find(params["x"])
-  # find pets where owner id = x
   erb :"add_pet"
 end
 
@@ -18,8 +16,8 @@ get "/save_pet" do
     erb :"add_pet"
   end
 end
-# edit pet -------------------------------------------------
 
+# edit pet -------------------------------------------------
 get "/edit_pet/:x" do
   @pet = Pet.find(params["x"])
   erb :"edit_pet"
@@ -37,17 +35,17 @@ get "/save_pet_name" do
 end
 
 # delete pet -------------------------------------------------
-get "/delete_owner_form" do
-  erb :"delete_owner"
+get "/delete_pet/:x" do
+  @pet = Pet.find(params["x"])
+  erb :"delete_pet"
 end
 
-get "/delete_owner" do
-  @owner = Owner.find(params["id"])
+get "/delete_pet_confirm" do
+  @pet = Pet.find(params["id"])
   if params["decision"] == "yes"
-    @owner.delete
-    "deleted." # make erb for this.
+    @pet.delete
+    erb :"pet_deleted_success" # make erb for this.
   else
-    "not deleted." # make erb for this.
-    # erb :"delete_success"
+    erb :"pet_deleted_fail"
   end
 end
