@@ -1,5 +1,5 @@
 # pets controller
-
+# TODO still need to acknowledge a solution for apstrophe's.
 # add pet------------------------------------------------------
 #TODO Bug right here, not sending to error. Something about
 get "/add_pet/:x" do

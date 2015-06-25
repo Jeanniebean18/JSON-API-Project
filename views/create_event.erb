@@ -1,0 +1,10 @@
+<h1> <%=@category.name%></h1> 
+
+  <form action="/save_event">
+    <p> Name (required): <input type="text" placeholder="name" name="name" value="<%= params["name"]%>" required></p>
+    <p> Date: <input type="date" placeholder="date" name="date" value="<%= params["date"]%>" required></p>
+     <input type="hidden" name="category_id" value="<%=@category.id%>">
+    <p> <input type="submit" value="submit"></p>
+  </form>
+
+  
