@@ -5,7 +5,7 @@
 <h2>Add a new pet event:</h2>
 
 <% Category.all.each do |category| %>
-<p><a href = "/create_event/<%= category.id %>"><%= category.name %> </a> 
+<p><a href = "/create_event/<%= category.id %>/<%= @owner.id %>"><%= category.name %> </a> 
   <% end %>
 
   <!-- listing pets to edit or delete -->

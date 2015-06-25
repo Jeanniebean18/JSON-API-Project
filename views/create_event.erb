@@ -3,22 +3,30 @@
 <form action="/save_event">
   <p> Name (required): <input type="text" placeholder="name" name="name" value="<%= params["name"]%>" required></p>
   
-  <p> Date: <input type="date" name="date" value="<%= params["date"]%>" required></p>
+  <p> For pets:
+    <%pets = Pet.where("owner_id", @owner.id)%>
+    <% pets.each do |pet| %>
+    <input type ="checkbox" name ="pets"><%=pet.name%></b> 
+    <% end %>
+      
   
-  <input type="hidden" name="category_id" value="<%=@category.id%>">
+    <p> Date: <input type="date" name="date" value="<%= params["date"]%>" required></p>
   
-  <p> When should this <%=@category.name%> happen again?</p>
-  <select name="reminder_date">
-    <option value="7">1 week</option>
-    <option value="30">1 month</option>
-    <option value="90">3 months</option>
-    <option value="180">6 months</option>
-    <option value="365">1 year</option>
-  </select>
-  <p> Comments: <input type="text" name="comment" value="<%= params["comment"]%>" required></p>
+    <input type="hidden" name="category_id" value="<%=@category.id%>">
   
-  <p> <input type="submit" value="submit"></p>
+    <p> When should this <%=@category.name%> happen again?</p>
+    <select name="reminder_date">
+      <option value="7">1 week</option>
+      <option value="30">1 month</option>
+      <option value="90">3 months</option>
+      <option value="180">6 months</option>
+      <option value="365">1 year</option>
+    </select>
+    <p> Comments: <input type="text" type="text" cols="40" rows="5" 
+      style="width:200px; height:50px;" name="comment" value="<%= params["comment"]%>"></p>
+  
+      <p> <input type="submit" value="submit"></p>
 
-</form>
+    </form>
 
   
