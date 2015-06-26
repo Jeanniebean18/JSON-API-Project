@@ -10,6 +10,7 @@
 
   <!-- listing pets to edit or delete -->
   <h2>Here are your pets:</h2>
+ select all pet_ids in  petevents where pevents.event_id = events.id
   <!-- or each pet, show the corresponding events. -->
   <!-- or for each event, show details and pets involved. --> <!-- ## this will be the join table. -->
   <!-- both! -->
@@ -17,6 +18,7 @@
   <%pets = Pet.where("owner_id", @owner.id)%>
   <% pets.each do |pet| %>
   <b><p> <%=pet.name%></b> <a href="/edit_pet/<%=pet.id%>">edit name</a> <a href="/delete_pet/<%=pet.id%>">delete pet</a></p>
+ <%=@petevents = PetEvent.where("pet_id", pet.id)%>
   <% end %>
   <!-- add pet -->
   <h2><a href="/add_pet/<%=@owner.id %>">Add a Pet</a></h2>
