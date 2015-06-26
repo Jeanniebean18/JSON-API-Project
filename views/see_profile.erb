@@ -11,7 +11,8 @@
   <!-- listing pets to edit or delete -->
   <h2>Here are your pets:</h2>
   <!-- or each pet, show the corresponding events. -->
-  <!-- or for each event, show details and pets involved. -->
+  <!-- or for each event, show details and pets involved. --> <!-- ## this will be the join table. -->
+  <!-- both! -->
   
   <%pets = Pet.where("owner_id", @owner.id)%>
   <% pets.each do |pet| %>

@@ -1,13 +1,13 @@
 <p>Name: <%= @event.name %> </p>
 <p> For: <%=@string.to_sentence%>
-<p>Date:<%=@event.date%> </p>
-<p><%=@event.category_id%></p>
-<p><%=@event.reminder_time%> </p>
-<p><%=@event.comment%></p>
+  <p>Date:<%=@event.date%> </p>
+  <p><%=@event.category_id%></p>
+  <p><%=@event.reminder_time%> </p>
+  <p><%=@event.comment%></p>
 
 
 
-<% Event.all.each do |event| %>
-<p> Event name: <%= event.name %> Date: <%= event.date %> Reminder Time:  <%= event.reminder_time %> comments:<%= event.comment %>
-<% end %>
+  <% Event.all.each do |event| %>
+  <p> Event name: <%= event.name %> Date: <%= event.date %> Reminder Time:  <%= event.reminder_time %> comments:<%= event.comment %>
+    <% end %>
  

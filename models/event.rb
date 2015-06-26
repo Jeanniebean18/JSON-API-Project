@@ -63,12 +63,12 @@ class Event
   #    end
   #  end
   # # name_valid - if name isn't empty, return true.
- #  def name_valid(name)
- #    if !name.empty?
- #      self.name = name
- #      return true
- #    else
- #      return false
- #    end
- #  end
+  #  def name_valid(name)
+  #    if !name.empty?
+  #      self.name = name
+  #      return true
+  #    else
+  #      return false
+  #    end
+  #  end
 end
