@@ -10,6 +10,9 @@
 
   <!-- listing pets to edit or delete -->
   <h2>Here are your pets:</h2>
+  <!-- or each pet, show the corresponding events. -->
+  <!-- or for each event, show details and pets involved. -->
+  
   <%pets = Pet.where("owner_id", @owner.id)%>
   <% pets.each do |pet| %>
   <b><p> <%=pet.name%></b> <a href="/edit_pet/<%=pet.id%>">edit name</a> <a href="/delete_pet/<%=pet.id%>">delete pet</a></p>

@@ -19,6 +19,10 @@ module DatabaseInstanceMethods
     CONNECTION.execute("DELETE FROM #{table_name} WHERE id = #{@id};") # need to see if this one will work, if not look up.
   end
   
+  def s_to_i_array(array)
+    array.chomp.split(',').map { |x| x.to_i }
+  end
+  
   # Updates/saves a row's information in a table
   #
   # Returns updated Object

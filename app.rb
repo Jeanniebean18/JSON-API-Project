@@ -3,10 +3,12 @@ require "sqlite3"
 require "pry"
 require "sinatra"
 require "sinatra/reloader"
+
 # Inventory tracking system for Fibers Home Store. 
 # Empower my program with SQLite.
 require "sqlite3"
 require "active_support/inflector"
+require "active_support/core_ext/array/conversions.rb"
 
 require_relative "models/owner.rb"
 require_relative "models/pet.rb"
