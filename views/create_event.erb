@@ -7,7 +7,7 @@
   <p> For pets:
     <%pets = Pet.where("owner_id", @owner.id)%>
     <% pets.each do |pet| %>
-    <input type ="checkbox" name ="pets" value="pet.id"><%=pet.name%></b> 
+    <input type ="checkbox" name ="pets" value="<%=pet.id%>"><%=pet.id%><%=pet.name%></b> 
     <% end %>
       
   

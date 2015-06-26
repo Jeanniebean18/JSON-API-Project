@@ -42,7 +42,9 @@ class Event
   end
   # instance method adds object attributes to database as a row.
   def add_to_database
-    event.add({"name" => "#{self.name}", "date" => "#{self.owner_id}", "category_id" => "#{self.category_id}", "reminder_time" => "#{self.reminder_time}", "comment" => "#{self.comment}"})
+    Event.add({"name" => "#{self.name}", "date" => "#{self.date}", "category_id" => "#{self.category_id}", "reminder_time" => "#{self.reminder_time}", "comment" => "#{self.comment}"})
+    id = CONNECTION.last_insert_row_id
+    return id
   end
   # 
   # TODO write a method that adds the incremented time to the date.
