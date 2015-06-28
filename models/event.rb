@@ -46,6 +46,10 @@ class Event
     id = CONNECTION.last_insert_row_id
     return id
   end
+  def self.event_details
+  results = CONNECTION.execute("SELECT pets.name, events.name, events.date FROM events JOIN pet_events ON events.id = pet_events.event_id LEFT JOIN pets ON pets.id = pet_events.pet_id;")
+end
+  
   # 
   # TODO write a method that adds the incremented time to the date.
   # need to add pets to pets_events table. 
@@ -71,4 +75,11 @@ class Event
   #      return false
   #    end
   #  end
+  
+  # <!-- <%=@petevents = PetEvent.where("pet_id", pet.id)%>
+  # <%=@petevents.each do |event| %>
+  # <%=event.name%>
+  #  <% end %>
+  # <!-- <%=@petevents = PetEvent.where("pet_id", pet.id)%>
+ #   <!-- <% end %> --> -->
 end

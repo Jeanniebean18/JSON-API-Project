@@ -9,13 +9,8 @@ end
 
 get "/save_pet" do
   @pet = Pet.new({"name" => params["name"], "owner_id" => params["owner_id"]})
-  if @pet.name_valid(params["name"]) 
-    @pet.add_to_database
+  @pet.add_to_database
     erb :"add_pet_success"
-  else
-    @error = true
-    erb :"add_pet"
-  end
 end
 #TODO Bug right here, not sending to error. Something about
 
