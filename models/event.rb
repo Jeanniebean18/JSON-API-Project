@@ -47,8 +47,8 @@ class Event
     return id
   end
   def self.event_details
-  results = CONNECTION.execute("SELECT pets.name, pets.id, events.name, events.date FROM events JOIN pet_events ON events.id = pet_events.event_id LEFT JOIN pets ON pets.id = pet_events.pet_id;")
-end
+    results = CONNECTION.execute("SELECT pets.name, pets.id AS pet, events.id, events.name, events.date, events.reminder_time, events.comment FROM events JOIN pet_events ON events.id = pet_events.event_id LEFT JOIN pets ON pets.id = pet_events.pet_id;")
+  end
   
   # 
   # TODO write a method that adds the incremented time to the date.
@@ -81,5 +81,5 @@ end
   # <%=event.name%>
   #  <% end %>
   # <!-- <%=@petevents = PetEvent.where("pet_id", pet.id)%>
- #   <!-- <% end %> --> -->
+  #   <!-- <% end %> --> -->
 end

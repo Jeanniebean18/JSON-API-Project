@@ -14,20 +14,24 @@
   <!-- or each pet, show the corresponding events. -->
   <!-- or for each event, show details and pets involved. --> <!-- ## this will be the join table. -->
   <!-- both! -->
- <%pets = Pet.where("owner_id", @owner.id)%>
+  <%pets = Pet.where("owner_id", @owner.id)%>
   
   <% pets.each do |pet| %>
-  <b><p> <%=pet.name%></b> <a href="/edit_pet/<%=pet.id%>">edit name</a> <a href="/delete_pet/<%=pet.id%>">delete pet</a><%@petid = pet.id%></p>
+  <b><p><h2> <%=pet.name%></h2></b> <a href="/edit_pet/<%=pet.id%>">edit name</a> <a href="/delete_pet/<%=pet.id%>">delete pet</a><%@petid = pet.id%></p>
   <%@petsandevents.each do |hash|%>
-  <% if hash["id"] == @petid%>
-  <%= hash["name"]%>
-  <% end %>
-  <% end %>
-  <% end %>
+  <p><% if hash["pet"] == @petid%>
+    pet event: <%= hash["name"]%>
+    date: <%= hash["date"]%>
+    due again: <%= hash["reminder_time"]%>
+    comments: <%= hash["comment"]%> </p>
+    <a href = "/edit_event/<%=hash["id"]%>">edit event</a>
+    <% end %>
+    <% end %>
+    <% end %>
 
-  <!-- add pet -->
-  <h2><a href="/add_pet/<%=@owner.id %>">Add a Pet</a></h2>
-  <!-- edit user profile -->
-  <p>Or, <a href="/edit_profile/<%= @owner.id %>">Edit your Profile</a> <a href="/home">Return to main menu?</a>
+    <!-- add pet -->
+    <h2><a href="/add_pet/<%=@owner.id %>">Add a Pet</a></h2>
+    <!-- edit user profile -->
+    <p>Or, <a href="/edit_profile/<%= @owner.id %>">Edit your Profile</a> <a href="/home">Return to main menu?</a>
      
     

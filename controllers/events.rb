@@ -13,11 +13,11 @@ get "/save_event" do
   @string = []
   @pet_ids = params["pets"]
   @pet_ids.each do |row|
-     @pet = Pet.find(row.to_i)
-     @string << @pet.name
-     @pet_event = PetEvent.new("pet_id" => row, "event_id" => event)
-     @pet_event.add_to_database
-   end
+    @pet = Pet.find(row.to_i)
+    @string << @pet.name
+    @pet_event = PetEvent.new("pet_id" => row, "event_id" => event)
+    @pet_event.add_to_database
+  end
 
   erb :"save_event_success"
 end
@@ -33,8 +33,8 @@ end
 
 get "/delete_event/:x" do
   @event = Event.find(params[:x])
- @event.delete
- "event deleted."
+  @event.delete
+  "event deleted."
 end
 
 # edit event -------------------------------------------------
