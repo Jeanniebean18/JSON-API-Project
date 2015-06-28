@@ -1,7 +1,7 @@
 <h1> <%=@category.name%></h1> 
 
-<form action="/save_event">
-  <p> Name (required): <input type="text" placeholder="name" name="name" value="<%= params["name"]%>" required></p>
+<form action="/edit_event_save">
+  <p> Name (required): <input type="text" placeholder="name" name="name" value="<%=@event.name%>" required></p>
   <!-- what to do with pet information.  -->
   
   <p> For pets:
@@ -11,11 +11,10 @@
     <% end %>
       
   
-    <p> Date: <input type="date" name="date" value="<%= params["date"]%>" required></p>
+    <p> Date: <input type="date" name="date" value="<%=@event.date%>" required></p>
   
     <input type="hidden" name="category_id" value="<%=@category.id%>">
-    <input type="hidden" name="owner_id" value="<%=@owner.id%>">
-    
+    <input type="hidden" name="id" value="<%=@event.id%>">
   
     <p> When should this <%=@category.name%> happen again?</p>
     <select name="reminder_time">
@@ -26,7 +25,7 @@
       <option value="365">1 year</option>
     </select>
     <p> Notes about this<%=@category.name%>: <input type="text" type="text" cols="40" rows="5" 
-      style="width:200px; height:50px;" name="comment" value="<%= params["comment"]%>"></p>
+      style="width:200px; height:50px;" name="comment" value="<%= @event.comment%>"></p>
   
       <p> <input type="submit" value="submit"></p>
 

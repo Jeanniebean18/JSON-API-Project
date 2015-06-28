@@ -1,13 +1,8 @@
+<h1><%=@category.name%> Saved!</h1>
 <p>Name: <%= @event.name %> </p>
-<p> For: <%=@string.to_sentence%>
-  <p>Date: <%=@event.date%> </p>
-  <p>Category: <%=@event.category_id%></p>
-  <p>Reminder Time: <%=@event.reminder_time%> days </p>
-  <p>notes: <%=@event.comment%></p>
+<p>For: <%=@string.to_sentence%>
+<p>Date: <%=@event.date%> </p>
+<p>Reminder Time: <%=@event.reminder_time%> days </p>
+<p>notes: <%=@event.comment%></p>
 
-
-
-  <% Event.all.each do |event| %>
-  <p> Event name: <%= event.name %> Date: <%= event.date %> Reminder Time:  <%= event.reminder_time %> comments:<%= event.comment %>
-    <% end %>
- 
+<a href="/see_profile/<%=@owner.id%>">Return to your profile.</a>

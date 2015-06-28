@@ -20,9 +20,9 @@ class PetEvent
   #                         table.
   # name (optional)         - String of the category's name.
   
-  def initialize(pevent_options={})
-    @pet_id = pevent_options["pet_id"]
-    @event_id = pevent_options["event_id"]
+  def initialize(petvent_options={})
+    @pet_id = petvent_options["pet_id"]
+    @event_id = petvent_options["event_id"]
   end
   # save row to database. 
   def save
@@ -32,7 +32,11 @@ class PetEvent
   def add_to_database
     PetEvent.add({"pet_id" => "#{self.pet_id}", "event_id" => "#{self.event_id}"})
   end
- 
+  # Deletes row where petid and eventid equal arguments.
+  # Returns deleted row.
+  def self.delete_where(petid, eventid)
+      CONNECTION.execute("DELETE FROM pet_events WHERE (pet_id = #{petid} AND event_id = #{eventid});")
+    end
 end
   
   

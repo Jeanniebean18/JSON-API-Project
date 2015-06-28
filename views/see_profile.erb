@@ -20,18 +20,15 @@
   <b><p><h2> <%=pet.name%></h2></b> <a href="/edit_pet/<%=pet.id%>">edit name</a> <a href="/delete_pet/<%=pet.id%>">delete pet</a><%@petid = pet.id%></p>
   <%@petsandevents.each do |hash|%>
   <p><% if hash["pet"] == @petid%>
-    pet event: <%= hash["name"]%>
-    date: <%= hash["date"]%>
-    due again: <%= hash["reminder_time"]%>
-    comments: <%= hash["comment"]%> </p>
-    <a href = "/edit_event/<%=hash["id"]%>">edit event</a>
-    <% end %>
-    <% end %>
-    <% end %>
+    <p><b><%= hash["name"]%></b> date: <%= hash["date"]%> due again: <%= hash["reminder_time"]%> days notes: <%= hash["comment"]%> 
+      <a href ="/delete_event_bridge/<%=@petid%>/<%=hash["id"]%>/<%=@owner.id%>"> delete from pet</a>
+      <% end %>
+      <% end %>
+      <% end %>
 
-    <!-- add pet -->
-    <h2><a href="/add_pet/<%=@owner.id %>">Add a Pet</a></h2>
-    <!-- edit user profile -->
-    <p>Or, <a href="/edit_profile/<%= @owner.id %>">Edit your Profile</a> <a href="/home">Return to main menu?</a>
+      <!-- add pet -->
+      <h2><a href="/add_pet/<%=@owner.id %>">Add a Pet</a></h2>
+      <!-- edit user profile -->
+      <p>Or, <a href="/edit_profile/<%= @owner.id %>">Edit your Profile</a> <a href="/home">Return to main menu?</a>
      
     
