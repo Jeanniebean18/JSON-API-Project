@@ -47,7 +47,7 @@ class Event
     return id
   end
   def self.event_details
-  results = CONNECTION.execute("SELECT pets.name, events.name, events.date FROM events JOIN pet_events ON events.id = pet_events.event_id LEFT JOIN pets ON pets.id = pet_events.pet_id;")
+  results = CONNECTION.execute("SELECT pets.name, pets.id, events.name, events.date FROM events JOIN pet_events ON events.id = pet_events.event_id LEFT JOIN pets ON pets.id = pet_events.pet_id;")
 end
   
   # 

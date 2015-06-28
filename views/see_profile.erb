@@ -17,7 +17,12 @@
  <%pets = Pet.where("owner_id", @owner.id)%>
   
   <% pets.each do |pet| %>
-  <b><p> <%=pet.name%></b> <a href="/edit_pet/<%=pet.id%>">edit name</a> <a href="/delete_pet/<%=pet.id%>">delete pet</a></p>
+  <b><p> <%=pet.name%></b> <a href="/edit_pet/<%=pet.id%>">edit name</a> <a href="/delete_pet/<%=pet.id%>">delete pet</a><%@petid = pet.id%></p>
+  <%@petsandevents.each do |hash|%>
+  <% if hash["id"] == @petid%>
+  <%= hash["name"]%>
+  <% end %>
+  <% end %>
   <% end %>
 
   <!-- add pet -->

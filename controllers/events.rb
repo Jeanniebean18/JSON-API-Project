@@ -15,7 +15,6 @@ get "/save_event" do
   @pet_ids.each do |row|
      @pet = Pet.find(row.to_i)
      @string << @pet.name
-    
      @pet_event = PetEvent.new("pet_id" => row, "event_id" => event)
      @pet_event.add_to_database
    end

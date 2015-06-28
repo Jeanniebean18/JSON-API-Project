@@ -38,6 +38,7 @@ end
 
 get "/see_profile/:x" do
   @owner = Owner.find(params["x"])
+  @petsandevents = Event.event_details
   # find pets where owner id = x
   erb :"see_profile"
 end
