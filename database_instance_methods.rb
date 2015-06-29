@@ -18,26 +18,21 @@ module DatabaseInstanceMethods
     table_name = self.class.to_s.pluralize.underscore
     CONNECTION.execute("DELETE FROM #{table_name} WHERE id = #{@id};") # need to see if this one will work, if not look up.
   end
-  
   def s_to_i_array(array)
     array.chomp.split(',').map { |x| x.to_i }
   end
-  
+  # name_valid returns true if name field isn't empty.
   def name_valid(name)
     if !name.empty?
       self.name = name
       return true
-    else
-      return false
     end
   end
-  
+  # name_email returns true if email field isn't empty.
   def email_valid(email)
     if !email.empty?
       self.email = email
       return true
-    else
-      return false
     end
   end
 

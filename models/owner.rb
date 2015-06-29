@@ -41,8 +41,6 @@ class Owner
   def add_to_database
     Owner.add({"name" => "#{self.name}", "email" => "#{self.email}"})
   end
-  # email_valid - if email isn't empty, return true.
 
-  # name_valid - if name isn't empty, return true.
 
 end

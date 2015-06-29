@@ -47,7 +47,6 @@ require_relative "controllers/events.rb"
 
 
 #TODO's Add verify's on all fields.
-# Make method to increment due date.
 # find a way to edit event, maybe keep pets involved the same. Seems legit.
 # add in a gem
 # send emails for notifications.

@@ -5,16 +5,13 @@ require_relative "pet.rb"
 require_relative "../database_class_methods.rb"
 require_relative "../database_instance_methods.rb"
 
-
-
-
 class Event
   extend DatabaseClassMethods
   include DatabaseInstanceMethods
   attr_reader :id, :category_id
   attr_accessor :name, :date, :reminder_time, :comment
  
-  # Initializes a new Pet object.
+  # Initializes a new Event object.
   #
   # id   - Integer of the primary key in the 'events' table.
   #                         table.
@@ -51,15 +48,13 @@ class Event
   def self.event_details
     results = CONNECTION.execute("SELECT pets.name, pets.id AS pet, events.id, events.name, events.date, events.reminder_time, events.category_id, events.comment FROM events JOIN pet_events ON events.id = pet_events.event_id LEFT JOIN pets ON pets.id = pet_events.pet_id;")
   end
+  
+  # Takes date of event and reminder_time chosen by user.
+  # increments date to reminder_time
+  # Returns incremented date.
   def increment_date(date, reminder_time)
     @formatted_date = date.gsub(/-/, ', ').to_i
     new_date = Date.new(@formatted_date)
     new_date.advance(days: reminder_time) # => Wed, 04 Aug 2010
   end
- 
-
-  # TODO write a method that adds the incremented time to the date.
-  #if name isn't empty, return true.
-  
-
 end
