@@ -9,7 +9,8 @@ module DatabaseClassMethods
   def table_name
     self.to_s.pluralize.underscore
   end
- 
+  
+  # Returns results as objects.
   def results_as_objects(results)
     array_of_objects = []
 
