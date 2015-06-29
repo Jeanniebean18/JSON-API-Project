@@ -9,9 +9,9 @@ end
 
 get "/save_event" do
   @event = Event.new({"name" => params["name"], "date" => params["date"], "category_id" => params["category_id"], "reminder_time" => params["reminder_time"], "comment" => params["comment"]})
-   @owner = Owner.find(params["owner_id"])
-   @category = Category.find(params["category_id"])
-   event = @event.add_to_database
+  @owner = Owner.find(params["owner_id"])
+  @category = Category.find(params["category_id"])
+  event = @event.add_to_database
   @string = []
   @pet_ids = params["pets"]
   @pet_ids.each do |row|
@@ -22,7 +22,7 @@ get "/save_event" do
   end
   erb :"save_event_success"
 end
-
+# delete event from pet ------------------------------------------------------
 get "/delete_event_bridge/:x/:y/:z" do
   @pet = Pet.find(params[:x])
   @event = Event.find(params[:y])
@@ -31,12 +31,14 @@ get "/delete_event_bridge/:x/:y/:z" do
   erb :"delete_event_bridge"
 end
 
-
+# For admin purposes 
+#V View all events ------------------------------------------------------
 get "/event_details" do
   @petsandevents = Event.event_details
   erb :"event_details"
 end
-
+# For admin purposes 
+#Choose event to delete ------------------------------------------------------
 get "/show_events" do
   erb :"show_events"
 end
@@ -46,10 +48,3 @@ get "/delete_event/:x" do
   @event.delete
   "event deleted."
 end
-
-# edit event -------------------------------------------------
-
-
-# delete event -------------------------------------------------
-# don' think you need this because the pet is the id. Should return an array of 
-# @pet = Pet.find(pet)

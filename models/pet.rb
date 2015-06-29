@@ -41,19 +41,6 @@ class Pet
   def add_to_database
     Pet.add({"name" => "#{self.name}", "owner_id" => "#{self.owner_id}"})
   end
-  
-  # select from pets where owner_id = owner.id
-  # email_valid - if email isn't empty, return true.
-  # owner id should be passed as hidden field. 
-  
-  # def email_valid(email)
- #    if !email.empty?
- #      self.email = email
- #      return true
- #    else
- #      return false
- #    end
- #  end
-  # name_valid - if name isn't empty, return true.
+
 
 end

@@ -1,13 +1,13 @@
 <% if @error %>
-<p> The changes were not saved. Please include required field name and email.</p>
+<p> The changes were not saved. Please include required field name.</p>
 <%end%>
 
 <h1> Edit Pet Name </h1>
-<p><strong>Here is the current.</strong></p>
+<p><strong>Here is the current name.</strong></p>
 <p>Enter any changes and click submit. </p>
    
 <form action="/save_pet_name">
-  <p> Name : <input type="text" placeholder="" name="name" value="<%=@pet.name%>" required></p>
+  <p> Name : <input type="text" name="name" value="<%=@pet.name%>"></p>
   <input type="hidden" name= "id" value="<%=@pet.id%>">
   <p> <input type="submit" value="submit changes"></p>
 </form>

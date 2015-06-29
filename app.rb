@@ -9,6 +9,7 @@ require "sinatra/reloader"
 require "sqlite3"
 require "active_support/inflector"
 require "active_support/core_ext/array/conversions.rb"
+require "active_support/core_ext/date/calculations.rb"
 
 require_relative "models/owner.rb"
 require_relative "models/pet.rb"
@@ -45,7 +46,11 @@ require_relative "controllers/events.rb"
 
 
 
-     
+#TODO's Add verify's on all fields.
+# Make method to increment due date.
+# find a way to edit event, maybe keep pets involved the same. Seems legit.
+# add in a gem
+# send emails for notifications.
 
 
 

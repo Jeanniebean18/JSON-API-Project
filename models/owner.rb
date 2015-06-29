@@ -42,21 +42,7 @@ class Owner
     Owner.add({"name" => "#{self.name}", "email" => "#{self.email}"})
   end
   # email_valid - if email isn't empty, return true.
-  def email_valid(email)
-    if !email.empty?
-      self.email = email
-      return true
-    else
-      return false
-    end
-  end
+
   # name_valid - if name isn't empty, return true.
-  def name_valid(name)
-    if !name.empty?
-      self.name = name
-      return true
-    else 
-      return false
-    end
-  end
+
 end

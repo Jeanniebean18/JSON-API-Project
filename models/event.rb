@@ -7,6 +7,7 @@ require_relative "../database_instance_methods.rb"
 
 
 
+
 class Event
   extend DatabaseClassMethods
   include DatabaseInstanceMethods
@@ -46,40 +47,19 @@ class Event
     id = CONNECTION.last_insert_row_id
     return id
   end
+  # Method uses join to combine events, pets and pet_events table.
   def self.event_details
     results = CONNECTION.execute("SELECT pets.name, pets.id AS pet, events.id, events.name, events.date, events.reminder_time, events.category_id, events.comment FROM events JOIN pet_events ON events.id = pet_events.event_id LEFT JOIN pets ON pets.id = pet_events.pet_id;")
   end
-  
-  # 
-  # TODO write a method that adds the incremented time to the date.
-  # need to add pets to pets_events table. 
+  def increment_date(date, reminder_time)
+    @formatted_date = date.gsub(/-/, ', ').to_i
+    new_date = Date.new(@formatted_date)
+    new_date.advance(days: reminder_time) # => Wed, 04 Aug 2010
+  end
  
-  # select from pets where owner_id = owner.id
-  # email_valid - if email isn't empty, return true.
-  # owner id should be passed as hidden field. 
+
+  # TODO write a method that adds the incremented time to the date.
+  #if name isn't empty, return true.
   
-  # def email_valid(email)
-  #    if !email.empty?
-  #      self.email = email
-  #      return true
-  #    else
-  #      return false
-  #    end
-  #  end
-  # # name_valid - if name isn't empty, return true.
-  #  def name_valid(name)
-  #    if !name.empty?
-  #      self.name = name
-  #      return true
-  #    else
-  #      return false
-  #    end
-  #  end
-  
-  # <!-- <%=@petevents = PetEvent.where("pet_id", pet.id)%>
-  # <%=@petevents.each do |event| %>
-  # <%=event.name%>
-  #  <% end %>
-  # <!-- <%=@petevents = PetEvent.where("pet_id", pet.id)%>
-  #   <!-- <% end %> --> -->
+
 end
