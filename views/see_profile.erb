@@ -20,7 +20,7 @@
   <b><p><h2> <%=pet.name%></h2></b> <a href="/edit_pet/<%=pet.id%>">edit name</a> <a href="/delete_pet/<%=pet.id%>">delete pet</a><%@petid = pet.id%></p>
   <%@petsandevents.each do |hash|%>
   <p><% if hash["pet"] == @petid%>
-    <p><b><%= hash["name"]%></b> - date: <%= hash["date"]%> notes: <%= hash["comment"]%> - <%@event = Event.find(hash["id"]) %> due again: <%=@event.increment_date(@event.date, @event.reminder_time.to_i)%>
+    <p><b><%= hash["name"]%></b> - date: <%= hash["date"]%> notes: <%= hash["comment"]%> - <%@event = Event.find(hash["id"]) %> due again: <%=@date = @event.increment_date(@event.date, @event.reminder_time.to_i)%>
       <a href ="/delete_event_bridge/<%=@petid%>/<%=hash["id"]%>/<%=@owner.id%>"> delete from pet</a>
       <% end %>
       <% end %>

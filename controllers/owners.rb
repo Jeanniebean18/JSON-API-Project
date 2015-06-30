@@ -1,5 +1,5 @@
 get "/home" do
-  erb :"user_menu"
+  erb :"user_menu", :layout => :"layout-admin"
 end
 
 # add owner------------------------------------------------------
