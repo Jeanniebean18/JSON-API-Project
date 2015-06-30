@@ -46,7 +46,7 @@ module DatabaseClassMethods
   # Returns an object 
   def find(record_id)
     # Figure out the table's name from the class we're calling the method on.
-    table_name = self.to_s.pluralize.underscore
+    
     result = CONNECTION.execute("SELECT * FROM #{table_name} WHERE id = #{record_id}").first
     self.new(result)
   end
@@ -54,7 +54,7 @@ module DatabaseClassMethods
   #
   # Returns an Array of Objects
   def sort(column_name)
-    table_name = self.to_s.pluralize.underscore
+    
     results = CONNECTION.execute("SELECT * FROM #{table_name} ORDER BY #{column_name} DESC;")
     results_as_objects(results)
    
@@ -63,7 +63,7 @@ module DatabaseClassMethods
   #
   # Returns an Array of Objects
   def sort_asc(column_name)
-    table_name = self.to_s.pluralize.underscore
+    
     results = CONNECTION.execute("SELECT * FROM #{table_name} ORDER BY #{column_name} ASC;")
     results_as_objects(results)
   end
@@ -76,7 +76,7 @@ module DatabaseClassMethods
   # Returns an Array of Objects
  
   def where(column_name, column_id)
-    table_name = self.to_s.pluralize.underscore
+    
     results = CONNECTION.execute("SELECT * FROM #{table_name} WHERE #{column_name} = #{column_id};")
     results_as_objects(results)
   end
