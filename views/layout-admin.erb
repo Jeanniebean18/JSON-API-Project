@@ -1,27 +1,28 @@
 <!doctype html>
 <head>
- <title> PawMate</title>
-   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <title> PawMate</title>
+  <link href='http://fonts.googleapis.com/css?family=Dosis:300,500' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/main.css">
 </head>
 <nav>
 </nav>
 <body>
-  <header>
-    <div id="fix_header">
-      pawmate
+  <div class="home">
+    <header>
+      <a href="/home">
+        <img src="/logo.svg" type="image/svg+xml" class="logo">
+      </a>
+     </header>
+
+    <div class="primary">
+      <%=yield%>
     </div>
-  </header>
+  
+  
+    <footer>
+     
+    </footer>
 
-<div class="primary">
- <%=yield%>
-</div>
-  
-  
-  <footer> <div id="fix_footer">
-        pawmate 2015.
   </div>
-</footer>
-
 </body>
 </html>

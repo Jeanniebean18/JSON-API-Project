@@ -13,11 +13,9 @@ module DatabaseClassMethods
   # Returns results as objects.
   def results_as_objects(results)
     array_of_objects = []
-
     results.each do |hash|
       array_of_objects << self.new(hash)
     end
-
     return array_of_objects
   end
   # Return all of the rows for a given table.
@@ -46,7 +44,6 @@ module DatabaseClassMethods
   # Returns an object 
   def find(record_id)
     # Figure out the table's name from the class we're calling the method on.
-    
     result = CONNECTION.execute("SELECT * FROM #{table_name} WHERE id = #{record_id}").first
     self.new(result)
   end
@@ -54,16 +51,13 @@ module DatabaseClassMethods
   #
   # Returns an Array of Objects
   def sort(column_name)
-    
     results = CONNECTION.execute("SELECT * FROM #{table_name} ORDER BY #{column_name} DESC;")
     results_as_objects(results)
-   
   end
   # sort - call to database to sort table by column name in ascending order.
   #
   # Returns an Array of Objects
   def sort_asc(column_name)
-    
     results = CONNECTION.execute("SELECT * FROM #{table_name} ORDER BY #{column_name} ASC;")
     results_as_objects(results)
   end
@@ -76,7 +70,6 @@ module DatabaseClassMethods
   # Returns an Array of Objects
  
   def where(column_name, column_id)
-    
     results = CONNECTION.execute("SELECT * FROM #{table_name} WHERE #{column_name} = #{column_id};")
     results_as_objects(results)
   end
