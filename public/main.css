@@ -175,8 +175,7 @@ footer {
     margin-left:auto;
     padding-right: 5%;
     padding-left: 5%;
-    margin-top:20%;
-    
+    margin-top:270px;
   }
   
   .mobile_column {
@@ -186,6 +185,19 @@ footer {
   /*div {
     border: 2px solid !important;
   }*/
+  
+  .quote {
+    display:none;
+  }
+  
+}
+
+@media (min-width: 900px) {
+  
+  .full_column {
+    
+    margin-top:210px;
+  }
   
   .quote {
     display:block;
