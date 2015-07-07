@@ -8,19 +8,18 @@ html {
 a {
   font-family:'Dosis', sans-serif;
   font-size: 100%;
-  color: white;
+  color: #F29685;
   text-decoration:none;
-  font-weight:light;
+  font-weight:bold;
+}
+
+.center {
+  text-align:center;
+  font-size:200%;
 }
 body {
-  margin: 0;
-  position: relative;
-  font-family: 'Open Sans', sans-serif;
-  background: url("/cat.jpg") no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  margin:0;
+ 
 }
 
 .home {
@@ -28,17 +27,18 @@ body {
   width: 100%;
   overflow: hidden;
   margin: 0;
+  margin-top:100px;
 }
 
 header {
+  
   background-color: #F29685;
   height: 100px;
   width: 100%;
   z-index:200;
   position: absolute;
   top:0;
-  opacity: 0.8;
-  filter: alpha(opacity=80);
+  
 }
 
 .icons {
@@ -58,9 +58,98 @@ header {
   margin-top: 200px;
 }
 
-p {
-  text-align: center;
+h1 {
+  color:#666666;
+}
+
+.profile {
+  position: relative
+  display:block;
+  width:40%;
+  float:left;
+  
+}
+
+.square_button {
+  padding:top;
+  background-color:#F29685;
+  text-align:center;
+  padding-top:40%;
+  padding-bottom:40%;
+  font-size: 22px;
   color:white;
+  font-family:'Dosis', sans-serif;
+}
+
+.square_button2 {
+  padding:top;
+  background-color:#F2AFA5;
+  text-align:center;
+  padding-top:40%;
+  padding-bottom:40%;
+  font-size: 22px;
+  color:white;
+  font-family:'Dosis', sans-serif;
+}
+.user_box {
+  background-color:#F2F2F2;
+  text-align:center;
+  padding-top:20%;
+  padding-bottom:20%;
+  font-size: 22px;
+  color:#666666;
+  font-family:'Dosis', sans-serif;
+}
+.events {
+  position: relative
+  display:block;
+  width:60%;
+  float:left;
+  padding:5%;
+}
+.user_iconf {
+  content:url("/user_icon.svg");
+  width:70%;
+  position:relative;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:5px;
+}
+
+.medicine_icon {
+  content:url("/medicine.svg");
+  width:70%;
+  position:relative;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:5px;
+}
+
+.grooming_icon {
+  content:url("/grooming.svg");
+  width:70%;
+  position:relative;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:5px;
+}
+
+.vet_visit_icon {
+  content:url("/vet_visit.svg");
+  width:70%;
+  position:relative;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:5px;
+}
+
+h2 {
+  color:#666666;
+}
+p {
+  font-family:'Dosis', sans-serif;
+  text-align: center;
+  color:#666666;
 }
 
 .primary {

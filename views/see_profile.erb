@@ -1,34 +1,80 @@
-<h1> Hi <%= @owner.name %> </h1>
+<div class="home_ux">
+  <div class="profile">
+    <div class="user_box"> 
+      Hi <%= @owner.name %> 
+      <div class="user_iconf">
+      </div>
+    </div>
 
-<!-- add new event by category -->
+    <!-- add new event by category -->
 
-<h2>Add a new pet event:</h2>
-
-<% Category.all.each do |category| %>
-<p><a href = "/create_event/<%= category.id %>/<%= @owner.id %>"><%= category.name %> </a> 
-  <% end %>
-
-  <!-- listing pets to edit or delete -->
-  <h2>Here are your pets:</h2>
- 
-  <!-- or each pet, show the corresponding events. -->
-  <!-- or for each event, show details and pets involved. --> <!-- ## this will be the join table. -->
-  <!-- both! -->
-  <%pets = Pet.where("owner_id", @owner.id)%>
+    <div class="square_button">
+      events
+    </div>
+    <div class="square_button2">
+      pets
+    </div>
+    <p>Or, <a href="/edit_profile/<%= @owner.id %>">Edit your Profile</a> <a href="/home">Return to main menu?</a>
+    </div>
   
-  <% pets.each do |pet| %>
-  <b><p><h2> <%=pet.name%></h2></b> <a href="/edit_pet/<%=pet.id%>">edit name</a> <a href="/delete_pet/<%=pet.id%>">delete pet</a><%@petid = pet.id%></p>
-  <%@petsandevents.each do |hash|%>
-  <p><% if hash["pet"] == @petid%>
-    <p><b><%= hash["name"]%></b> - date: <%= hash["date"]%> notes: <%= hash["comment"]%> - <%@event = Event.find(hash["id"]) %> due again: <%=@date = @event.increment_date(@event.date, @event.reminder_time.to_i)%>
-      <a href ="/delete_event_bridge/<%=@petid%>/<%=hash["id"]%>/<%=@owner.id%>"> delete from pet</a>
+    <div class="events">
+      <p>
+        add a pet event:
+      </p>
+      <% Category.all.each do |category| %>
+      <p><a href = "/create_event/<%= category.id %>/<%= @owner.id %>">
+        <%if category.name == "Medicine"%>
+        <div class="medicine_icon">
+        </div>
+        <div class="center"> 
+          <%= category.name %>
+        </div>
+      </a> 
       <% end %>
-      <% end %>
-      <% end %>
+      <%if category.name == "Grooming"%>
+      <div class="grooming_icon">
+      </div>
+      <div class="center"> 
+        <%= category.name %>
+      </div>
+    </a> 
+    <% end %>
+     
+    <%if category.name == "Vet Visit"%>
+    <div class="vet_visit_icon">
+    </div>
+    <div class="center"> 
+      <%= category.name %>
+    </div>
+  </a> 
+  <% end %>
+  <% end %>
+</div> 
+<div style="clear: both;"></div>
+</div>
+<!-- listing pets to edit or delete -->
+  
+ 
+<!-- or each pet, show the corresponding events. -->
+<!-- or for each event, show details and pets involved. --> <!-- ## this will be the join table. -->
+<!-- both! -->
+<div class="pets">
+<%pets = Pet.where("owner_id", @owner.id)%>
+  
+<% pets.each do |pet| %>
+<b><p><h2> <%=pet.name%></h2></b> <a h ref="/edit_pet/<%=pet.id%>">edit name</a> <a href="/delete_pet/<%=pet.id%>">delete pet</a><%@petid = pet.id%></p>
+<%@petsandevents.each do |hash|%>
+<p><% if hash["pet"] == @petid%>
+  <p><b><%= hash["name"]%></b> - date: <%= hash["date"]%> notes: <%= hash["comment"]%> - <%@event = Event.find(hash["id"]) %> due again: <%=@date = @event.increment_date(@event.date, @event.reminder_time.to_i)%>
+    <a href ="/delete_event_bridge/<%=@petid%>/<%=hash["id"]%>/<%=@owner.id%>"> delete from pet</a>
+    <% end %>
+    <% end %>
+    <% end %>
 
-      <!-- add pet -->
-      <h2><a href="/add_pet/<%=@owner.id %>">Add a Pet</a></h2>
-      <!-- edit user profile -->
-      <p>Or, <a href="/edit_profile/<%= @owner.id %>">Edit your Profile</a> <a href="/home">Return to main menu?</a>
+    <!-- add pet -->
+    <h2><a href="/add_pet/<%=@owner.id %>">Add a Pet</a></h2>
+    <!-- edit user profile -->
+  </div>
+      
      
     
