@@ -13,19 +13,37 @@
       <a href="/home">
         <img src="/logo.svg" type="image/svg+xml" class="logo">
       </a>
-    </div>
+      <img src="/hamburger.svg" type="image/svg+xml" id="hamburger">
+    </a>
   </header>
+  
   <div class="home">
+    <div id="mobile_menu">
+     
+      <a href="/add_owner">
+        <div id="mobile_links">create owner</div>
+      </a>
+      <a href="/existing_owner">
+        <div id="mobile_links">select owner</div>
+      </a>
+      <a href="/delete_owner_form">
+        <div id="mobile_links">delete owner</div>
+      </a>
+      <a href="/see_categories">
+        <div id="mobile_links">edit categories</div>
+      </a>
+     
+    </div>
+    
 
     <div class="primary">
       <%=yield%>
     </div>
   
   </div>
-  <footer> <div id="fix_footer">
-    pawmate 2015.
-  </div>
+ 
 </footer>
-
+<script style="text/javascript" src="/global.js">
+</script>
 </body>
 </html>

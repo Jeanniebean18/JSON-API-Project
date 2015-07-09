@@ -120,6 +120,16 @@ footer {
 }
 
 
+#hamburger {
+    position:absolute;
+    top:0;
+    display:block;
+    width:10px;
+    height:10px;
+    z-index:5000;
+  }
+
+
 /*div {
 border: 2px solid !important;
 }*/
@@ -177,6 +187,7 @@ border: 2px solid !important;
     display:none;
   }
   
+
   /*div {
     border: 2px solid !important;
     }*/
