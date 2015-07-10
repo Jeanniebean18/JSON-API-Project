@@ -37,8 +37,14 @@ function show_pets() {
 events.style.display = "none";
 pets.style.display = "block";
 
-
 }
+
+
+
+
+
+
+
 
 
 

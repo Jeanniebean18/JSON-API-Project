@@ -5,10 +5,6 @@ html {
   box-sizing: inherit;
 }
 
-p {
-  color:white;
-}
-
 a {
   font-family:'Dosis', sans-serif;
   font-size: 100%;
@@ -39,7 +35,7 @@ body {
 .home_ux {
   position:relative;
   height:100% !important;
-  border:1px solid red;
+  
   
 }
 
@@ -47,16 +43,17 @@ body {
   position:relative;
   width: 100%;
   margin: 0;
-  /*margin-top:100px;*/
+  margin-top:60px;
 }
 
 header {
-  height: 0px;
+  height: 60px;
   width: 100%;
   z-index:200;
   position: absolute;
   top:0;
-  display:none;
+  display:block;
+  background-color:#11B3AF;
 }
 
 .icons {
@@ -91,26 +88,23 @@ h1 {
 
 #square_button {
   padding:top;
-  border-top: 3px solid #11B3AF;
-  
+  background-color:white;
   text-align:center;
-  
-  padding-top:20%;
-  padding-bottom:20%;
+  padding-top:40%;
+  padding-bottom:40%;
   font-size: 22px;
-  color:#11B3AF;
+   color:#666666;
   font-family:'Dosis', sans-serif;
 }
 
 #square_button2 {
   padding:top;
-  border-top: 3px solid #11B3AF;
-  border-bottom: 3px solid #11B3AF;
+  background-color:white;
   text-align:center;
-  padding-top:20%;
-  padding-bottom:20%;
+  padding-top:40%;
+  padding-bottom:40%;
   font-size: 22px;
-  color:#11B3AF;
+  color:#666666;
   font-family:'Dosis', sans-serif;
 }
 .user_box {
@@ -159,7 +153,6 @@ h1 {
   right:0;
   width:60%;
   padding:5%;
-  min-height:700px;
   background-color:#11B3AF;
   z-index: 5000;
 }
@@ -208,7 +201,7 @@ h2 {
 p {
   font-family:'Dosis', sans-serif;
   text-align: center;
-  color:white;
+  color:#666666;
 }
 
 .primary {
@@ -220,19 +213,9 @@ p {
 
 .logo {
   position: relative;
-  display:none;
   top:0;
-  margin-left:1%;
-  margin-top:5px;
-  margin-bottom:40px;
-  width:125px;
-}
-
-.logo2 {
-  position: relative;
-  top:0;
-  margin-left:1%;
-  margin-top:5px;
+  margin-left:2%;
+  margin-top:10px;
   margin-bottom:40px;
   width:125px;
 }
@@ -310,18 +293,6 @@ p {
   padding:10px;
   
 }
-#medicine_mobile {
-  margin-top:15%;
-}
-
-#add_pet_event {
-
-  color:white;
-  display:block;
-  text-align:center;
-  font-family:'Dosis', sans-serif;
-  
-}
 
 
 
@@ -333,25 +304,12 @@ border: 2px solid !important;
 @media (min-width: 800px) {
   
   header {
-    height: 100px;
-    
+    height: 60px;
+    width: 100%;
     z-index:200;
     position: absolute;
     top:0;
-    right:0;
     display:block;
-    opacity: 0.8;
-    width:90%;
-    filter: alpha(opacity=80);
-    background-color:#11B3AF;
-  }
-  .logo {
-    position: relative;
-    display:block;
-    top:0;
-    margin: 0px auto 5% auto;
-    margin-bottom:40px;
-    width:300px;
   }
   
   h1 {
@@ -382,15 +340,6 @@ border: 2px solid !important;
     background-size: cover;
     min-height: 600px;
   }
-  .logo2 {
-    position: relative;
-    display:none;
-    top:0;
-    margin-left:1%;
-    margin-top:5px;
-    margin-bottom:40px;
-    width:125px;
-  }
   
   .primary {
     position:relative;
@@ -399,73 +348,46 @@ border: 2px solid !important;
     
   
   }
-  
-  #add_pet_event {
-    position: absolute;
-    top:125px;
-    left:425px;
-    color:white;
-    display:block;
-    text-align:center;
-    font-family:'Dosis', sans-serif;
-    
-  }
-  
   #events {
-    position:absolute;
-    top:-20px;
-    left:30px;
     display:block;
     width:100%;
     position:relative;
     background-color:transparent;
-    height:100%;
-    min-height:520px;
-    
     
   }
   
   #pets {
-    display:none;
-    position: relative;
-    width:100%;
-    padding:5%;
-    background-color:transparent;
+      display:none;
+      position: relative;
+      width:100%;
+      padding:5%;
     
-  }
+    }
   
   .medicine_icon {
     content:url("/medicine.svg");
-    width:100px;
+    width:60%;
     position:relative;
     
   }
   
   .grooming_icon {
     content:url("/grooming.svg");
-    width:100px;
+    width:60%;
     position:relative;
    
   }
 
   .vet_visit_icon {
     content:url("/vet_visit.svg");
-    width:100px;
+    width:60%;
     position:relative;
     
   }
-/*  #icons_wrapper {
-    margin-left:auto;
-    margin-right:auto;
-    width:auto;
-    top:-300px;
-  }*/
   
   #medicine_mobile {
     width:31%;
     float:left;
-    
-    
   }
   .profile {
     position: absolute;
@@ -474,7 +396,6 @@ border: 2px solid !important;
     width:10%;
     
   }
- 
 
 
   
@@ -490,7 +411,7 @@ border: 2px solid !important;
   }
   
   #mobile_menu {
-    display:none;
+   display:none;
   
   }
 
@@ -547,30 +468,6 @@ border: 2px solid !important;
       display:none;
     
     }
-    
-    #square_button {
-      border-top:0;
-      text-align:center;
-      padding-top:20%;
-      padding-bottom:20%;
-      font-size: 22px;
-      color:white;
-      font-family:'Dosis', sans-serif;
-      background-color:#11B3AF;
-    }
-
-    #square_button2 {
-      padding:top;
-      border-top: 0;
-      border-bottom: 0;
-      background-color:#11B3AF;
-      text-align:center;
-      padding-top:20%;
-      padding-bottom:20%;
-      font-size: 22px;
-      color:white;
-      font-family:'Dosis', sans-serif;
-    }
   
   }
 
@@ -599,34 +496,8 @@ border: 2px solid !important;
       width:100%;
       position:relative;
       background-color:transparent;
-      height:100%;
-      min-height:520px;
   
-    }
-    
-    #square_button {
-      border-top:0;
-      text-align:center;
-      padding-top:20%;
-      padding-bottom:20%;
-      font-size: 22px;
-      color:white !important;
-      font-family:'Dosis', sans-serif;
-      background-color:#11B3AF;
-    }
-
-    #square_button2 {
-      padding:top;
-      border-top: 0;
-      border-bottom: 0;
-      background-color:#11B3AF;
-      text-align:center;
-      padding-top:20%;
-      padding-bottom:20%;
-      font-size: 22px;
-      color:white !important;
-      font-family:'Dosis', sans-serif;
-    }
   }
+  
 
 

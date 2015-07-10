@@ -36,11 +36,11 @@ get "/existing_owner" do
   erb :"existing_owner"
 end
 
-get "/see_profile/:x" do
+get "/see_profile/:x" do 
   @owner = Owner.find(params["x"])
   @petsandevents = Event.event_details
   # find pets where owner id = x
-  erb :"see_profile"
+  erb :"see_profile",:layout => :"ux_layout"
 end
 #/edit profile --------------------------------------------------
 get "/edit_profile/:x" do

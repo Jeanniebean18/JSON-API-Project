@@ -31,7 +31,7 @@ body {
 }
 
 header {
-  background-color: #F29685;
+  background-color: #11B3AF;
   height: 100px;
   width: 100%;
   z-index:200;
@@ -109,7 +109,7 @@ p {
   display:none;
 }
 
-.quote {
+#quote {
   display:none;
 }
 
@@ -192,7 +192,7 @@ border: 2px solid !important;
     border: 2px solid !important;
     }*/
   
-  .quote {
+  #quote {
     display:none;
     
   }
@@ -206,15 +206,15 @@ border: 2px solid !important;
       margin-top:210px;
     }
   
-    .quote {
+    #quote {
       display:block;
       background-color: white;
       opacity: 0.5;
       filter: alpha(opacity=50);
       font-family:'Dosis', sans-serif;
       font-size: 30px;
-      padding:5%;
-      color:#F29685;
+      padding:7%;
+      color:#11B3AF;
       text-align: center;
       margin-top:6%;
     }
