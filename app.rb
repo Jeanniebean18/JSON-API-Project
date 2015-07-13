@@ -11,26 +11,20 @@ require "active_support/inflector"
 require "active_support/core_ext/array/conversions.rb"
 require "active_support/core_ext/date/calculations.rb"
 
-require_relative "models/owner.rb"
-require_relative "models/pet.rb"
-require_relative "models/category.rb"
-require_relative "models/event.rb"
-require_relative "models/petevent.rb"
+require_relative "models/assignment.rb"
+require_relative "models/link.rb"
+require_relative "models/partner.rb"
+
 
 
 # Load/create our database for this program in SQlite.
-CONNECTION = SQLite3::Database.new("pet_tracker.db")
+CONNECTION = SQLite3::Database.new("assignments.db")
 
-CONNECTION.execute("CREATE TABLE IF NOT EXISTS owners (id INTEGER PRIMARY KEY, name TEXT, email TEXT)")
+CONNECTION.execute("CREATE TABLE IF NOT EXISTS assignments (id INTEGER PRIMARY KEY, name TEXT, description TEXT, github TEXT);")
 
-CONNECTION.execute("CREATE TABLE IF NOT EXISTS pets (id INTEGER PRIMARY KEY, name TEXT, owner_id INTEGER);")
+CONNECTION.execute("CREATE TABLE IF NOT EXISTS links (id INTEGER PRIMARY KEY, assignment_id INTEGER, link TEXT, type TEXT);")
 
-CONNECTION.execute("CREATE TABLE IF NOT EXISTS events (id INTEGER PRIMARY KEY, name TEXT, date TEXT,
-category_id INTEGER, reminder_time TEXT, comment TEXT);")
-
-CONNECTION.execute("CREATE TABLE IF NOT EXISTS categories (id INTEGER PRIMARY KEY, name TEXT);")
-
-CONNECTION.execute("CREATE TABLE IF NOT EXISTS pet_events (pet_id INTEGER, event_id INTEGER);")
+CONNECTION.execute("CREATE TABLE IF NOT EXISTS partners (id INTEGER PRIMARY KEY, assignment_id INTEGER, name_worked TEXT);")
 
 # Get results as an Array of Hashes.
 CONNECTION.results_as_hash = true
@@ -39,10 +33,9 @@ CONNECTION.results_as_hash = true
 
 #___________________________________________________________________________________________________________
 
-require_relative "controllers/owners.rb"
-require_relative "controllers/pets.rb"
-require_relative "controllers/categories.rb"
-require_relative "controllers/events.rb"
+require_relative "controllers/assignments.rb"
+
+
 
 
 

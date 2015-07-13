@@ -1,0 +1,14 @@
+<h1><%=@assignment.name%> Saved!</h1>
+<p>Name: <%= @assignment.name %> </p>
+<p>Description: <%= @assignment.description %></p>
+<p>Github: <%= @assignment.github %></p>
+<p>Article Links: <%=@article_links%></p>
+<p>Blog Links: <%=@blog_links%></p>
+<p>Partners: <%=@partner_names%></p>
+
+<h2> all assignments </h2>
+<% Assignment.all.each do |assignment| %>
+<p><%= assignment.name %> </p>
+<%end%>
+
+ <a href="/home">  Go home </a>

@@ -1,0 +1,18 @@
+Add an assignment.
+
+<form action="/save_assignment">
+  <p> Assignment Name (required): <input type="text" placeholder="name" name="name" value="<%= params["name"]%>" required></p>
+  <!-- what to do with pet information.  -->
+  
+  <p> Assignment Description (required): <input type="text" placeholder="description" name="description"  size="50" value="<%= params["description"]%>" required></p>
+      
+  <p> Assignment Github Link (required): <input type="text" placeholder="github link" name="github" size="50" value="<%= params["github"]%>" required></p>
+  <p> Names of people who worked on assignment (seperated by comma): <input type="text" placeholder="names"  size="100" name="partners" value="<%= params["partners"]%>" required></p>
+ 
+  <p> Article links, seperated by comma: <input type="text" placeholder="article links"  size="100" name="article_links" value="<%= params["article_links"]%>" ></p>
+  
+  <p> Video links, seperated by comma: <input type="text" placeholder="video links" name="video_links" size="100" value="<%= params["video_links"]%>" ></p>
+    
+  <p> <input type="submit" value="submit"></p>
+
+  </form>

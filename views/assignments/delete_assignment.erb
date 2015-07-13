@@ -1,0 +1,16 @@
+Which assignment would you like to delete?
+     
+<form action="/delete_assignment">
+  
+  Select an Assignment to Delete: <select name="id"></p> <% Assignment.all.each do |assignment| %>
+    <option value="<%= assignment.id %>"> <%= assignment.id %> <%= assignment.name %></option>
+    <% end %>
+  </select>
+    
+  <p> Are you sure you want to delete this Assignment? :  
+    <input type="radio"  name="decision" value="yes" > Yes
+    <input type="radio"  name="decision" value="no" checked> No
+      
+    <p> <input type="submit" value="delete assignment"></p>
+  </form>
+    

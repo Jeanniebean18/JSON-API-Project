@@ -1,0 +1,20 @@
+<% Assignment.all.each do |assignment| %>
+<p> <strong>Assignment id:</strong> <%=assignment.id%><strong>Assignment name:</strong> <%= assignment.name %> <strong>Description:</strong> <%= assignment.description %> 
+  <strong>Github:</strong>  <a href = <%=assignment.github %>><%= assignment.github %></a>
+  <strong>partners: </strong>
+  <!-- partners -->
+  <%@partner = Partner.find_partner(assignment.id)%>
+  <%@partner.each do |partner|%>
+  <%=partner["name_worked"]%>, 
+  <% end %> 
+  <!-- partners -->
+     
+  <!-- links -->
+  <p><strong> Link:</strong>
+    <%@link = Link.find_link(assignment.id)%>
+    <%@link.each do |link|%>
+    <a href=<%=link["link"]%>> <%=link["link"]%> </a> <strong>Type</strong>: <%=link["type"]%>, </p>
+    <% end %> 
+    <!-- links -->
+    <% end %>
+ 
