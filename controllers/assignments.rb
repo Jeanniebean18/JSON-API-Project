@@ -31,8 +31,18 @@ get "/save_assignment" do
   @partner = Partner.new({"assignment_id" => assignment_id, "name_worked" => name})
   @partner.add_to_database
   end
+  
   erb :"assignments/save_assignment_success"
+  
+  
 end
+
+get "/api_assignment" do
+  @hash = Assignment.hash_objects
+
+  json @hash 
+end
+
 # delete assignment -------------------------------------------------
 get "/delete_assignment_form" do
   erb :"assignments/delete_assignment"

@@ -31,6 +31,18 @@ class Assignment
     @github = assignment_options["github"]
   end
   
+  def self.hash_objects
+    @assignments_hash = {}
+    Assignment.all.each do |assignment|
+    @assignments_hash[:id] = assignment.id
+    @assignments_hash[:assignment_name] = assignment.name
+    @assignments_hash[:description] = assignment.description
+    @assignments_hash[:github] = assignment.github
+    @partners = Partner.find_partner(assignment.id)
+    @assignments_hash[:partners] = @partners
+    end
+    return @assignments_hash
+  end
   # save row to database. 
   def save
     CONNECTION.execute("UPDATE assignments SET name = '#{self.name}', description = '#{self.description}', github = '#{self.github}', WHERE id = #{self.id};")

@@ -10,6 +10,7 @@ require "sqlite3"
 require "active_support/inflector"
 require "active_support/core_ext/array/conversions.rb"
 require "active_support/core_ext/date/calculations.rb"
+require "sinatra/json"
 
 require_relative "models/assignment.rb"
 require_relative "models/link.rb"
