@@ -30,18 +30,34 @@ class Assignment
     @description = assignment_options["description"]
     @github = assignment_options["github"]
   end
-  
+  # // returns hash of hashes of all assignments
   def self.hash_objects
     @assignments_hash = {}
     Assignment.all.each do |assignment|
-    @assignments_hash[:id] = assignment.id
-    @assignments_hash[:assignment_name] = assignment.name
-    @assignments_hash[:description] = assignment.description
-    @assignments_hash[:github] = assignment.github
-    @partners = Partner.find_partner(assignment.id)
-    @assignments_hash[:partners] = @partners
+      @assignments_hash[:id] = assignment.id
+      @assignments_hash[:assignment_name] = assignment.name
+      @assignments_hash[:description] = assignment.description
+      @assignments_hash[:github] = assignment.github
+      @partners = Partner.find_partner(assignment.id)
+      @assignments_hash[:partners] = @partners
+      @links = Link.find_link(assignment.id)
+      @assignments_hash[:links] = @links
     end
     return @assignments_hash
+  end
+  # // return single hash object of given assignment id
+  def self.hash_object(record_id)
+    assignment = Assignment.find(record_id)
+    @assignment_hash = {}
+    @assignment_hash[:id] = assignment.id
+    @assignment_hash[:assignment_name] = assignment.name
+    @assignment_hash[:description] = assignment.description
+    @assignment_hash[:github] = assignment.github
+    @partner = Partner.find_partner(assignment.id)
+    @assignment_hash[:partners] = @partners
+    @links = Link.find_link(assignment.id)
+    @assignment_hash[:links] = @links
+    return @assignment_hash
   end
   # save row to database. 
   def save

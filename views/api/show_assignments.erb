@@ -1,0 +1,7 @@
+Choose assignment:
+  
+<% Assignment.all.each do |assignment| %>
+<p> <a href ="/api/assignments/<%=assignment.id%>"><strong>Assignment name:</strong> <%= assignment.name %> 
+<%end%>
+
+ 

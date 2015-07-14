@@ -25,14 +25,6 @@ class Partner
     @name_worked = partner_options["name_worked"]
   end
   
-  def results_as_objects(results)
-    array_of_objects = []
-    results.each do |hash|
-      array_of_objects << self.new(hash)
-    end
-    return array_of_objects
-  end
-  
   # save row to database. 
   def save
     CONNECTION.execute("UPDATE partners SET assignment_id = '#{self.assignment_id}', name_worked = '#{self.name_worked}', WHERE id = #{self.id};")

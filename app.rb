@@ -35,15 +35,9 @@ CONNECTION.results_as_hash = true
 #___________________________________________________________________________________________________________
 
 require_relative "controllers/assignments.rb"
+require_relative "controllers/api_controller.rb"
 
 
-
-
-
-#TODO's Add verify's on all fields.
-# find a way to edit event, maybe keep pets involved the same. Seems legit.
-# add in a gem
-# send emails for notifications.
 
 
 
