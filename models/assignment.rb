@@ -47,14 +47,14 @@ class Assignment
   end
   # // return single hash object of given assignment id
   def self.hash_object(record_id)
-    assignment = Assignment.find(record_id)
     @assignment_hash = {}
+    assignment = Assignment.find(record_id)
     @assignment_hash[:id] = assignment.id
     @assignment_hash[:assignment_name] = assignment.name
     @assignment_hash[:description] = assignment.description
     @assignment_hash[:github] = assignment.github
     @partner = Partner.find_partner(assignment.id)
-    @assignment_hash[:partners] = @partners
+    @assignment_hash[:partners] = @partner
     @links = Link.find_link(assignment.id)
     @assignment_hash[:links] = @links
     return @assignment_hash

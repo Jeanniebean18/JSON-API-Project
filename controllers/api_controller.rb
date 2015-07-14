@@ -9,7 +9,7 @@ get "/api/show_assignments" do
 end
 
 get "/api/assignments/:id" do
-  @assignment = Assignment.hash_object(:id)
+  @assignment = Assignment.hash_object(params[:id])
   json @assignment
 end
  
